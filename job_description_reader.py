@@ -96,6 +96,5 @@ def filter_word(common, word):
 
     return word
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
-
