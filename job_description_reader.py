@@ -77,16 +77,16 @@ def filter_word(common, word):
         if search("\W",l) is not None:
             word = word.replace(l,'')
 
+    ## remove single letter errors ##
+    if len(word) == 0:
+        return -1
+		
     ## remove common words ##
     if word in common:
         return -1
 
     ## remove plain numbers ##
-    if search("\d+",word):
-        return -1
-
-    ## remove single letter errors ##
-    if len(word) == 0:
+    if search("^(\d+)$",word):
         return -1
 
     ## todo / better filter ##
@@ -98,3 +98,4 @@ def filter_word(common, word):
 
 if __name__ == "__main__":
     main()
+
